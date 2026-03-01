@@ -143,6 +143,9 @@ def main():
     date = datetime.date.today().isoformat()
 
     changelog_items = []
+    # prepare translation queues for AI agent
+    to_translate_agents = []
+    to_translate_skills = []
     for status, path in entries:
         if path.startswith("agents/"):
             kind = "agent"
@@ -179,6 +182,11 @@ def main():
 
         append_summary(args.summaries_dir, kind, date, path, status, summary, commit_short)
         changelog_items.append({"status": status, "path": path, "short": (short or ''), "commit": commit_short})
+        payload = {"path": path, "status": status, "commit": commit_short, "summary_en": summary, "changelog_line_en": (short or '')}
+        if kind == 'agent':
+            to_translate_agents.append(payload)
+        elif kind == 'skill':
+            to_translate_skills.append(payload)
 
     append_changelog(args.out, date, changelog_items)
     print(f"Wrote {len(changelog_items)} items to {args.out} and summaries dir {args.summaries_dir}")
@@ -186,6 +194,20 @@ def main():
     # also regenerate full skill index
     skill_index = generate_skill_index(args.summaries_dir)
     print(f"Generated skill index: {skill_index}")
+
+    # write translation queues as JSONL for AI agent processing (no API calls here)
+    import json
+    qdir = os.path.join(args.summaries_dir, "to_translate")
+    os.makedirs(qdir, exist_ok=True)
+    agents_q = os.path.join(qdir, "agents_to_translate.jsonl")
+    skills_q = os.path.join(qdir, "skills_to_translate.jsonl")
+    with open(agents_q, "w", encoding="utf-8") as f:
+        for obj in to_translate_agents:
+            f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+    with open(skills_q, "w", encoding="utf-8") as f:
+        for obj in to_translate_skills:
+            f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+    print(f"Wrote translation queues: {agents_q}, {skills_q}")
 
 
 if __name__ == '__main__':
