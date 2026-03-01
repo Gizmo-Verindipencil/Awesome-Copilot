@@ -6,5 +6,22 @@
     "name": "Awesome Copilot Community"
   },
   "repository": "https://github.com/github/awesome-copilot",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "azure",
+    "cloud",
+    "infrastructure",
+    "bicep",
+    "terraform",
+    "serverless",
+    "architecture",
+    "devops"
+  ],
+  "agents": [
+    "./agents"
+  ],
+  "skills": [
+    "./skills/azure-resource-health-diagnose",
+    "./skills/az-cost-optimize"
+  ]
 }
