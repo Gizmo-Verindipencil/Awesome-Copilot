@@ -1,151 +1,94 @@
-# エージェント一覧
+# Agent Summary (日本語)
 
-このファイルには全てのエージェントと短い日本語の概要を記載しています。
+### 2026-03-01 — agents/agent-governance-reviewer.agent.md (A)
+要約: AI agent governance エキスパート that reviews code for safety issues, missing governance controls, and helps implement policy enforcement, trust scoring, and audit trails in agent systems.（英語原文）
+コミット: 77409a5
 
-| エージェント名                                             | 概要                                                                                                                                                                                                                                                            |
-| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 4.1 Beast Mode v3.1                                        | GPT 4.1 を用いた高性能なコーディングエージェント。                                                                                                                                                                                                              |
-| Accessibility Expert                                       | ウェブアクセシビリティ（WCAG 2.1/2.2）、インクルーシブUX、アクセシビリティテストの専門アシスタント。                                                                                                                                                            |
-| Universal PR Comment Addresser                             | プルリクエストのコメント対応を行います。                                                                                                                                                                                                                        |
-| ADR Generator                                              | 構造化された形式で包括的なアーキテクチャ決定記録（ADR）を作成する専門エージェント。AI向けと人間向けの可読性を考慮しています。                                                                                                                                   |
-| AEM Front-End Specialist                                   | HTL、Tailwind CSS、Figma→コードのワークフローでAEMコンポーネントを開発する専門アシスタント。デザインシステム統合に対応します。                                                                                                                                  |
-| Amplitude Experiment Implementation                        | Amplitude の MCP ツールを用いて実験をデプロイし、バリアントテストや機能のロールアウトを支援するカスタムエージェント。                                                                                                                                           |
-| API Architect                                              | API アーキテクトとしてエンジニアを指導し、設計ガイダンス、サポート、および実用的なコードを提供します。                                                                                                                                                          |
-| apify-integration-expert                                   | Apify Actor をコードベースに統合する専門エージェント。Actor 選定、ワークフロー設計、JS/TS/Python での実装、テスト、プロダクション展開まで対応します。                                                                                                           |
-| Arch Linux Expert                                          | pacman、ローリングリリースの維持管理、Arch 特有のシステム管理ワークフローに特化したスペシャリスト。                                                                                                                                                             |
-| Senior Cloud Architect                                     | モダンなアーキテクチャ設計、非機能要件（NFR）、包括的なアーキテクチャ図とドキュメント作成の専門家。                                                                                                                                                             |
-| arm-migration-agent                                        | x86 ワークロードを Arm に移行する支援エージェント。リポジトリの前提や移植性の問題、コンテナベースイメージや依存関係の非互換性を検出し、Arm 最適化の変更、マルチアーチビルド、性能検証、最適化ガイドを提供してスムーズなクロスプラットフォーム展開を支援します。 |
-| Atlassian Requirements to Jira                             | 要件ドキュメントを構造化された Jira エピックとユーザーストーリーに変換します。重複検出、変更管理、ユーザー承認フローを備えています。                                                                                                                            |
-| azure-iac-exporter                                         | 既存の Azure リソースを Azure Resource Graph、ARM API、azure-iac-generator 統合を通じて IaC テンプレートにエクスポートします（Bicep、ARM、Terraform、Pulumi）。                                                                                                 |
-| azure-iac-generator                                        | Bicep、ARM、Terraform、Pulumi などの形式で IaC を生成するハブ。形式固有の検証とベストプラクティスに準拠します。                                                                                                                                                 |
-| Azure Logic Apps Expert Mode                               | Azure Logic Apps のワークフロー設計、統合パターン、JSON ベースの Workflow Definition Language に関する専門的ガイダンスを提供します。                                                                                                                            |
-| Azure Principal Architect mode instructions                | Azure Well-Architected Framework と Microsoft のベストプラクティスに基づくプリンシパルアーキテクトのガイダンスを提供します。                                                                                                                                    |
-| Azure SaaS Architect mode instructions                     | マルチテナントアプリケーションに特化した Azure SaaS アーキテクトのガイダンスを提供します。                                                                                                                                                                      |
-| Azure AVM Bicep mode                                       | Azure Verified Modules（AVM）を用いた Bicep の IaC の作成、更新、レビューを行います。                                                                                                                                                                           |
-| Azure AVM Terraform mode                                   | Azure Verified Modules（AVM）を用いた Terraform の IaC の作成、更新、レビューを行います。                                                                                                                                                                       |
-| Bicep Specialist                                           | Bicep テンプレートを作成する Azure Bicep の専門家として振る舞います。                                                                                                                                                                                           |
-| Bicep Planning                                             | Azure Bicep の IaC タスクの実装計画を策定します。                                                                                                                                                                                                               |
-| Blueprint Mode Codex                                       | 厳密な正確さと保守性を優先する構造化ワークフローを実行します。ツール使用を最小化し、事実を仮定せず、再現可能な解決、自己修正、エッジケース処理を重視します。                                                                                                    |
-| Blueprint Mode                                             | Debug、Express、Main、Loop といった構造化ワークフローを実行し、正確性と保守性を重視します。                                                                                                                                                                     |
-| CAST Imaging Impact Analysis Agent                         | CAST Imaging を用いてソフトウェアシステムの変更影響評価とリスク分析を行う専門エージェント。                                                                                                                                                                     |
-| CAST Imaging Software Discovery Agent                      | 静的解析を通じてソフトウェアアプリケーションの発見とアーキテクチャマッピングを提供します。                                                                                                                                                                      |
-| CAST Imaging Structural Quality Advisor Agent              | コード品質の問題を特定・分析し、修復方法を提示する専門エージェント。                                                                                                                                                                                            |
-| CentOS Linux Expert                                        | RHEL 互換の管理、yum/dnf ワークフロー、エンタープライズ向けハードニングに特化した CentOS 専門家。                                                                                                                                                               |
-| Clojure Interactive Programming                            | REPL ファーストの手法でインタラクティブにペアプログラミングを行う Clojure の専門家。品質基準を強制し、ライブ REPL で検証しながら変更します。                                                                                                                    |
-| VSCode Tour Expert                                         | VSCode CodeTour ファイルの作成と保守に関する専門エージェント。スキーマサポートとベストプラクティスを提供します。                                                                                                                                                |
-| Comet Opik                                                 | LLM アプリの計測、プロンプト/プロジェクト管理、プロンプト監査、トレース/メトリクス調査を行う Comet Opik エージェント。                                                                                                                                          |
-| Context7-Expert                                            | 最新ライブラリのバージョン、ベストプラクティス、正しい構文に関する専門家。                                                                                                                                                                                      |
-| Critical thinking mode instructions                        | 仮定を検証し、最適な解を導くための批判的思考を促します。                                                                                                                                                                                                        |
-| C#/.NET Janitor                                            | C#/.NET コードのクリーンアップ、モダナイズ、技術的負債の是正を行います。                                                                                                                                                                                        |
-| C# MCP Server Expert                                       | C# での Model Context Protocol（MCP）サーバー開発の専門アシスタント。                                                                                                                                                                                           |
-| C# Expert                                                  | .NET プロジェクト向けの開発支援エージェント。                                                                                                                                                                                                                   |
-| Custom Agent Foundry                                       | VS Code 向けカスタムエージェント設計と設定の最適化に関する専門家。                                                                                                                                                                                              |
-| Debian Linux Expert                                        | apt ベースのパッケージ管理、Debian ポリシーに準拠した運用に特化した Debain 専門家。                                                                                                                                                                             |
-| Debug Mode Instructions                                    | アプリケーションのバグを見つけて修正するデバッグ手順を提供します。                                                                                                                                                                                              |
-| Declarative Agents Architect                               | Microsoft 365 Copilot の宣言型エージェント設計に関するフルライフサイクルの専門家。                                                                                                                                                                              |
-| Demonstrate Understanding mode instructions                | コードや設計パターンの理解を検証するためのガイド付き質問を行います。                                                                                                                                                                                            |
-| Devils Advocate                                            | 考えや設計の欠点、リスク、エッジケースを積極的に指摘します。                                                                                                                                                                                                    |
-| DevOps Expert                                              | 自動化、コラボレーション、継続的改善に重点を置いた DevOps の専門家。                                                                                                                                                                                            |
-| DiffblueCover                                              | Java アプリのユニットテスト作成を支援するエージェント。                                                                                                                                                                                                         |
-| MAUI Expert                                                | .NET MAUI クロスプラットフォーム開発のサポート（コントロール、XAML、ハンドラ、性能最適化）。                                                                                                                                                                    |
-| .NET Upgrade                                               | C#/.NET コードのクリーンアップ、モダナイズ、技術的負債の対応を行います。                                                                                                                                                                                        |
-| droid                                                      | Droid CLI のインストール、使用例、自動化パターンを提供します。                                                                                                                                                                                                  |
-| Drupal Expert                                              | Drupal 開発、アーキテクチャ、ベストプラクティスの専門家（PHP 8.3+）。                                                                                                                                                                                           |
-| Dynatrace Expert                                           | 観測とセキュリティ機能を GitHub ワークフローに統合し、インシデント調査、デプロイ検証、パフォーマンス回帰検出、脆弱性管理を支援します。                                                                                                                          |
-| elasticsearch-agent                                        | オブザーバビリティ、ベクター検索最適化（RAG）、セキュリティ修復を行う専門 AI アシスタント。                                                                                                                                                                     |
-| Electron Code Review Mode Instructions                     | Node.js バックエンド（main）と Angular フロントエンド（render）を含む Electron アプリに特化したコードレビュー用指示。                                                                                                                                           |
-| C++ Expert                                                 | モダン C++ と業界のベストプラクティスに基づく専門的な C++ 支援を提供します。                                                                                                                                                                                    |
-| Expert .NET software engineer mode instructions            | モダンなソフトウェア設計パターンに基づく .NET の専門的設計支援を提供します。                                                                                                                                                                                    |
-| Next.js Expert                                             | App Router、Server Components、Turbopack、TypeScript を含む Next.js 16 に精通したエキスパート。                                                                                                                                                                 |
-| Expert React Frontend Engineer                             | 最新の React（Hooks、Server Components、Actions、TypeScript）と性能最適化に精通したフロントエンドエンジニア。                                                                                                                                                   |
-| Fedora Linux Expert                                        | dnf、SELinux、systemd ベースのワークフローに特化した Fedora 専門家。                                                                                                                                                                                            |
-| Gilfoyle Code Review Mode                                  | 辛辣で正直な技術レビューを行うモード（Gilfoyle のキャラクターになぞらえたレビュー）。                                                                                                                                                                           |
-| GitHub Actions Expert                                      | セキュアな CI/CD、Action の固定化（pinning）、OIDC 認証、最小権限の権限設定、サプライチェーンセキュリティに特化。                                                                                                                                               |
-| Go MCP Server Development Expert                           | 公式 SDK を用いた Go での MCP サーバー開発の専門アシスタント。                                                                                                                                                                                                  |
-| GPT 5 Beast Mode                                           | GPT-5 に最適化された強力な自治型エージェント。複雑な問題解決、ツール利用、反復的な研究を行います。                                                                                                                                                              |
-| High-Level Big Picture Architect (HLBPA)                   | 高レベルのアーキテクチャ文書化とレビューに特化したチャットモード。                                                                                                                                                                                              |
-| Implementation Plan Generation Mode                        | 新機能やリファクタリングの実装計画を生成します。                                                                                                                                                                                                                |
-| Universal Janitor                                          | 任意のコードベースの掃除（簡素化、技術的負債の除去）を行います。                                                                                                                                                                                                |
-| Java MCP Expert                                            | リアクティブストリーム、MCP Java SDK、Spring Boot 統合での MCP サーバー開発の専門家。                                                                                                                                                                           |
-| JFrog Security Agent                                       | パッケージとバージョンのコンプライアンス検証と脆弱性修正提案を行うセキュリティエージェント。                                                                                                                                                                    |
-| Kotlin MCP Server Development Expert                       | Kotlin での MCP サーバー開発の専門アシスタント。                                                                                                                                                                                                                |
-| Kusto Assistant                                            | Azure Data Explorer（Kusto）の KQL に関する専門アシスタント。                                                                                                                                                                                                   |
-| Laravel Expert Agent                                       | Laravel（12+）の開発支援、Eloquent、Artisan、テスト、ベストプラクティスを提供します。                                                                                                                                                                           |
-| launchdarkly-flag-cleanup                                  | LaunchDarkly MCP を用いて安全にフィーチャーフラグのクリーンアップを自動化します。適切なフォワード値の決定、可読性のある PR を作成します。                                                                                                                       |
-| Lingo.dev Localization (i18n) Agent                        | ウェブアプリの国際化（i18n）を体系的に実装するエージェント。チェックリスト駆動のアプローチを提供します。                                                                                                                                                        |
-| MCP M365 Agent Expert                                      | Microsoft 365 Copilot 用の宣言型エージェント設計（MCP 統合）の専門家。                                                                                                                                                                                          |
-| Mentor mode                                                | エンジニアを指導・支援するメンターモード。                                                                                                                                                                                                                      |
-| Meta Agentic Project Scaffold                              | エージェントプロジェクトの作成と管理を支援する補助ツール。                                                                                                                                                                                                      |
-| Microsoft Agent Framework .NET                             | .NET 版 Microsoft Agent Framework に関する作成、更新、リファクタリング支援を提供します。                                                                                                                                                                        |
-| Microsoft Agent Framework Python                           | Python 版 Microsoft Agent Framework に関するサポートを提供します。                                                                                                                                                                                              |
-| Microsoft Study and Learn                                  | Microsoft/Azure の学習をガイドするチューターモード。                                                                                                                                                                                                            |
-| Microsoft Learn Contributor                                | Microsoft の執筆スタイルとベストプラクティスに従ったドキュメント編集・執筆支援。                                                                                                                                                                                |
-| Modernization Agent                                        | プロジェクトの近代化計画、ドキュメント化、推奨アーキテクチャを提供する人間主導の支援エージェント。                                                                                                                                                              |
-| Monday Bug Context Fixer                                   | Monday.com のデータを取り込み、関連タスクや文書を補強して高品質な修正を提供します。                                                                                                                                                                             |
-| mongodb-performance-advisor                                | MongoDB のクエリとインデックスを分析し、パフォーマンス改善案を提示します。                                                                                                                                                                                      |
-| MS-SQL Database Administrator                              | Microsoft SQL Server の管理をサポートします。                                                                                                                                                                                                                   |
-| neo4j-docker-client-generator                              | GitHub issue から品質の高い Python Neo4j クライアントライブラリを生成するエージェント。                                                                                                                                                                         |
-| Neon Migration Specialist                                  | Neon のブランチ機能を活用したゼロダウンタイム Postgres マイグレーションの支援を行います。                                                                                                                                                                       |
-| Neon Performance Analyzer                                  | Postgres の遅いクエリを特定し、分離ブランチで最適化と検証を行います。                                                                                                                                                                                           |
-| octopus-release-notes-with-mcp                             | Octopus Deploy のリリースノートを生成します（MCP ツールで API にアクセス）。                                                                                                                                                                                    |
-| OpenAPI to Application Generator                           | OpenAPI 仕様から実用的なアプリケーションを生成する支援を行います。                                                                                                                                                                                              |
-| PagerDuty Incident Responder                               | PagerDuty インシデントを解析し、関連変更を特定して修正案を PR として提案します。                                                                                                                                                                                |
-| PHP MCP Expert                                             | PHP での MCP サーバー開発支援（属性ベースの検出を含む）。                                                                                                                                                                                                       |
-| Pimcore Expert                                             | Pimcore に関する CMS/DAM/PIM/Eコマース の専門サポート（Symfony 統合）。                                                                                                                                                                                         |
-| Plan Mode - Strategic Planning & Architecture              | 実装前の検討に重点を置いた戦略的プランニングとアーキテクチャ支援モード。                                                                                                                                                                                        |
-| Planning mode instructions                                 | 新機能やリファクタリングの実装計画を生成します。                                                                                                                                                                                                                |
-| Platform SRE for Kubernetes                                | 信頼性、ローアウト/ロールバックの安全性、セキュリティデフォルトを優先する Kubernetes SRE 専門家。                                                                                                                                                               |
-| Playwright Tester Mode                                     | Playwright テスト作成と実行に特化したモード。                                                                                                                                                                                                                   |
-| PostgreSQL Database Administrator                          | PostgreSQL の管理と運用を支援します。                                                                                                                                                                                                                           |
-| Power BI Data Modeling Expert Mode                         | スター・スキーマ設計、関係設定、最適化に関する Power BI データモデリングの専門ガイダンス。                                                                                                                                                                      |
-| Power BI DAX Expert Mode                                   | DAX の性能、可読性、保守性に関するベストプラクティスを提供します。                                                                                                                                                                                              |
-| Power BI Performance Expert Mode                           | Power BI モデルやレポートのパフォーマンス改善に関する専門的な助言を提供します。                                                                                                                                                                                 |
-| Power BI Visualization Expert Mode                         | 効率的でユーザーフレンドリーな Power BI レポート設計のガイドラインを提供します。                                                                                                                                                                                |
-| Power Platform Expert                                      | Power Platform（Code Apps、Canvas Apps、Dataverse、コネクタ）に関する専門家。                                                                                                                                                                                   |
-| Power Platform MCP Integration Expert                      | Copilot Studio 用のカスタムコネクタ開発と MCP 統合に関する専門家。                                                                                                                                                                                              |
-| Create PRD Chat Mode                                       | ユーザーストーリー、受け入れ基準、技術的考慮事項、測定基準を含む PRD を Markdown で生成します。                                                                                                                                                                 |
-| Principal software engineer                                | エンジニアリングの卓越性、技術的リーダーシップ、実用的な実装に焦点を当てたプリンシパルレベルの支援を提供します。                                                                                                                                                |
-| Prompt Builder                                             | 高品質なプロンプトを作成・検証する専門ツール。                                                                                                                                                                                                                  |
-| Prompt Engineer                                            | プロンプトの分析と改善を行う専門モードで、入力を体系的に評価し改善案を提示します。                                                                                                                                                                              |
-| Python MCP Server Expert                                   | Python での MCP サーバー開発の専門アシスタント。                                                                                                                                                                                                                |
-| Refine Requirement or Issue                                | 要件や課題を受け入れ基準、技術的考慮事項、エッジケース、NFR を含めて精緻化します。                                                                                                                                                                              |
-| Repo Architect Agent                                       | Agentic プロジェクト構造のブートストラップと検証を行います。                                                                                                                                                                                                    |
-| Technical spike research mode                              | 技術スパイクの系統的調査と検証を行います。                                                                                                                                                                                                                      |
-| Ruby MCP Expert                                            | Ruby での MCP サーバー開発支援を提供します。                                                                                                                                                                                                                    |
-| Rust Beast Mode                                            | Rust 向け GPT-4.1 コーディングのビーストモード。                                                                                                                                                                                                                |
-| Rust MCP Expert                                            | rmcp SDK と tokio を用いた Rust の MCP サーバー開発支援。                                                                                                                                                                                                       |
-| Salesforce Expert Agent                                    | Apex、LWC、統合、Aura→LWC 移行に関する専門家支援を提供します。                                                                                                                                                                                                  |
-| SE: DevOps/CI                                              | CI/CD パイプラインと GitOps ワークフローに特化した DevOps 支援を提供します。                                                                                                                                                                                    |
-| SE: Product Manager                                        | プロダクトマネージャー向けの支援（GitHub issue 作成、ビジネス価値とユーザーニーズの整合など）。                                                                                                                                                                 |
-| SE: Responsible AI                                         | バイアス防止、アクセシビリティ準拠、倫理的開発を重視した Responsible AI の専門家。                                                                                                                                                                              |
-| SE: Security                                               | OWASP Top10、Zero Trust、LLM セキュリティなどに関するセキュリティレビュー。                                                                                                                                                                                     |
-| SE: Architect                                              | Well-Architected フレームワークに基づくシステムアーキテクチャレビューを提供します。                                                                                                                                                                             |
-| SE: Tech Writer                                            | 開発者ドキュメント、技術ブログ、チュートリアルの作成支援を行います。                                                                                                                                                                                            |
-| SE: UX Designer                                            | Jobs-to-be-Done、ユーザージャーニー、Figma に関する UX 支援を提供します。                                                                                                                                                                                       |
-| Search & AI Optimization Expert                            | SEO/AEO/GEO を含む現代的な検索最適化と AI フレンドリーなコンテンツ戦略を提供します。                                                                                                                                                                            |
-| Semantic Kernel .NET                                       | .NET 版 Semantic Kernel に関する作成・更新・説明サポートを行います。                                                                                                                                                                                            |
-| Semantic Kernel Python                                     | Python 版 Semantic Kernel に関する作成・更新・説明サポートを行います。                                                                                                                                                                                          |
-| Shopify Expert                                             | Shopify のテーマ開発、Liquid テンプレート、アプリ開発、API に関する専門家支援を提供します。                                                                                                                                                                     |
-| Idea Generator                                             | アイデア創出から仕様作成までを支援するブレインストーミングエージェント。                                                                                                                                                                                        |
-| Software Engineer Agent                                    | 仕様駆動で生産準備が整った、保守性の高いコードを提供する専門エージェント。                                                                                                                                                                                      |
-| Specification                                              | 新規または既存機能の仕様を生成・更新します。                                                                                                                                                                                                                    |
-| stackhawk-security-onboarding                              | リポジトリに StackHawk セキュリティテストを自動設定するエージェント。                                                                                                                                                                                           |
-| Swift MCP Expert                                           | Swift での MCP サーバー開発支援を提供します。                                                                                                                                                                                                                   |
-| Task Planner Instructions                                  | 実行可能な実装計画を作成するタスクプランナー。                                                                                                                                                                                                                  |
-| Task Researcher Instructions                               | プロジェクトの包括的な分析を行うタスクリサーチャー。                                                                                                                                                                                                            |
-| TDD Green Phase - Make Tests Pass Quickly                  | 最小実装でテストをパスさせる TDD 戦略を支援します。                                                                                                                                                                                                             |
-| TDD Red Phase - Write Failing Tests First                  | 失敗するテストを先に書くことを奨励する TDD の手法を支援します。                                                                                                                                                                                                 |
-| TDD Refactor Phase - Improve Quality & Security            | テストが通った状態を保ちながら設計やセキュリティを改善します。                                                                                                                                                                                                  |
-| Technical Debt Remediation Plan                            | 技術的負債の修復計画を生成します。                                                                                                                                                                                                                              |
-| technical-content-evaluator                                | 教材や技術コンテンツの品質評価とカリキュラム設計を行う専門家。                                                                                                                                                                                                  |
-| Azure Terraform IaC Implementation Specialist              | Azure リソース用の Terraform を作成・レビューする専門家。                                                                                                                                                                                                       |
-| Azure Terraform Infrastructure Planning                    | Azure Terraform の実装計画を策定します。                                                                                                                                                                                                                        |
-| Terraform IaC Reviewer                                     | Terraform の状態安全性、最小権限、モジュールパターンに重点を置いてレビューを行います。                                                                                                                                                                          |
-| Terraform Agent                                            | Terraform のレジストリ統合、ワークスペース管理、実行オーケストレーションを行うインフラ専門エージェント。                                                                                                                                                        |
-| Thinking Beast Mode                                        | 高度な問題解決を行うトランセンダントなコーディングエージェント。                                                                                                                                                                                                |
-| TypeScript MCP Server Expert                               | TypeScript での MCP サーバー開発支援を提供します。                                                                                                                                                                                                              |
-| Ultimate Transparent Thinking Beast Mode                   | 透明性の高い Thinking Beast モード。                                                                                                                                                                                                                            |
-| voidBeast_GPT41Enhanced 1.0 - Elite Developer AI Assistant | 高度な自治型開発エージェント。マルチモードでの問題解決と研究能力を備えています。                                                                                                                                                                                |
-| WG Code Alchemist                                          | クリーンコード原則と SOLID に基づいてコードを変換します。                                                                                                                                                                                                       |
-| WG Code Sentinel                                           | セキュリティ問題のレビューを行います。                                                                                                                                                                                                                          |
-| WinForms Expert                                            | .NET WinForms アプリケーションの設計とサポートを提供します。                                                                                                                                                                                                    |
+### 2026-03-01 — agents/gem-browser-tester.agent.md (A)
+要約: 自動化： browser testing, UI/UX validation using browser automation tools and visual verification techniques（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-devops.agent.md (A)
+要約: 管理： containers, CI/CD pipelines, and infrastructure deployment（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-documentation-writer.agent.md (A)
+要約: 生成： technical docs, diagrams, maintains code-documentation parity（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-implementer.agent.md (A)
+要約: Executes TDD code changes, ensures verification, maintains quality（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-orchestrator.agent.md (A)
+要約: 調整： multi-agent workflows, delegates tasks, synthesizes results via runSubagent（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-planner.agent.md (A)
+要約: 作成： DAG-based plans with pre-mortem analysis and task decomposition from research findings（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-researcher.agent.md (A)
+要約: Research specialist: gathers codebase context, identifies relevant files/patterns, returns structured findings（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/gem-reviewer.agent.md (A)
+要約: Security gatekeeper for critical tasks—OWASP, secrets, compliance（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/markdown-accessibility-assistant.agent.md (A)
+要約: Improves the accessibility of markdown files using five GitHub best practices（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/nuxt-expert.agent.md (A)
+要約: エキスパート Nuxt developer specializing in Nuxt 3, Nitro, server routes, data fetching strategies, and performance optimization with Vue 3 and TypeScript（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-builder.agent.md (A)
+要約: Runs build/compile commands for any language and reports results. Discovers build command from project files if not specified.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-fixer.agent.md (A)
+要約: Fixes compilation errors in source or テスト： files. Analyzes error messages and applies corrections.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-generator.agent.md (A)
+要約: 調整： comprehensive テスト： generation using Research-Plan-Implement pipeline. Use when asked to 生成： テスト：, write unit テスト：, improve テスト： coverage, or 追加： テスト：.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-implementer.agent.md (A)
+要約: Implements a single phase from the テスト： plan. Writes テスト： files and verifies they compile and pass. Calls builder, tester, and fixer agents as needed.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-linter.agent.md (A)
+要約: Runs code formatting/linting for any language. Discovers lint command from project files if not specified.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-planner.agent.md (A)
+要約: 作成： structured テスト： implementation plans from research findings. Organizes テスト： into phases by priority and complexity. Works with any language.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-researcher.agent.md (A)
+要約: Analyzes codebases to understand structure, testing patterns, and testability. Identifies source files, existing テスト：, build commands, and testing framework. Works with any language.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-tester.agent.md (A)
+要約: Runs テスト： commands for any language and reports results. Discovers テスト： command from project files if not specified.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/qa-subagent.agent.md (A)
+要約: Meticulous QA subagent for テスト： planning, bug hunting, edge-case analysis, and implementation verification.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/rug-orchestrator.agent.md (A)
+要約: Pure orchestration agent that decomposes requests, delegates all work to subagents, validates outcomes, and repeats until complete.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/swe-subagent.agent.md (A)
+要約: Senior software engineer subagent for implementation tasks: feature development, debugging, refactoring, and testing.（英語原文）
+コミット: 77409a5
+
+### 2026-03-01 — agents/vuejs-expert.agent.md (A)
+要約: エキスパート Vue.js frontend engineer specializing in Vue 3 Composition API, reactivity, state management, testing, and performance with TypeScript（英語原文）
+コミット: 77409a5
+
