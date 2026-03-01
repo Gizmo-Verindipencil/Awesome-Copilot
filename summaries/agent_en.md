@@ -149,3 +149,95 @@ This file lists all agents with a short English summary.
 | WG Code Alchemist | Ask WG Code Alchemist to transform your code with Clean Code principles and SOLID design |
 | WG Code Sentinel | Ask WG Code Sentinel to review your code for security issues. |
 | WinForms Expert | Support development of .NET (OOP) WinForms Designer compatible Apps. |
+### 2026-03-01 — agents/agent-governance-reviewer.agent.md (A)
+Summary: AI agent governance expert that reviews code for safety issues, missing governance controls, and helps implement policy enforcement, trust scoring, and audit trails in agent systems.
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-browser-tester.agent.md (A)
+Summary: Automates browser testing, UI/UX validation using browser automation tools and visual verification techniques
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-devops.agent.md (A)
+Summary: Manages containers, CI/CD pipelines, and infrastructure deployment
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-documentation-writer.agent.md (A)
+Summary: Generates technical docs, diagrams, maintains code-documentation parity
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-implementer.agent.md (A)
+Summary: Executes TDD code changes, ensures verification, maintains quality
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-orchestrator.agent.md (A)
+Summary: Coordinates multi-agent workflows, delegates tasks, synthesizes results via runSubagent
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-planner.agent.md (A)
+Summary: Creates DAG-based plans with pre-mortem analysis and task decomposition from research findings
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-researcher.agent.md (A)
+Summary: Research specialist: gathers codebase context, identifies relevant files/patterns, returns structured findings
+Commit: 77409a5
+
+### 2026-03-01 — agents/gem-reviewer.agent.md (A)
+Summary: Security gatekeeper for critical tasks—OWASP, secrets, compliance
+Commit: 77409a5
+
+### 2026-03-01 — agents/markdown-accessibility-assistant.agent.md (A)
+Summary: Improves the accessibility of markdown files using five GitHub best practices
+Commit: 77409a5
+
+### 2026-03-01 — agents/nuxt-expert.agent.md (A)
+Summary: Expert Nuxt developer specializing in Nuxt 3, Nitro, server routes, data fetching strategies, and performance optimization with Vue 3 and TypeScript
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-builder.agent.md (A)
+Summary: Runs build/compile commands for any language and reports results. Discovers build command from project files if not specified.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-fixer.agent.md (A)
+Summary: Fixes compilation errors in source or test files. Analyzes error messages and applies corrections.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-generator.agent.md (A)
+Summary: Orchestrates comprehensive test generation using Research-Plan-Implement pipeline. Use when asked to generate tests, write unit tests, improve test coverage, or add tests.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-implementer.agent.md (A)
+Summary: Implements a single phase from the test plan. Writes test files and verifies they compile and pass. Calls builder, tester, and fixer agents as needed.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-linter.agent.md (A)
+Summary: Runs code formatting/linting for any language. Discovers lint command from project files if not specified.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-planner.agent.md (A)
+Summary: Creates structured test implementation plans from research findings. Organizes tests into phases by priority and complexity. Works with any language.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-researcher.agent.md (A)
+Summary: Analyzes codebases to understand structure, testing patterns, and testability. Identifies source files, existing tests, build commands, and testing framework. Works with any language.
+Commit: 77409a5
+
+### 2026-03-01 — agents/polyglot-test-tester.agent.md (A)
+Summary: Runs test commands for any language and reports results. Discovers test command from project files if not specified.
+Commit: 77409a5
+
+### 2026-03-01 — agents/qa-subagent.agent.md (A)
+Summary: Meticulous QA subagent for test planning, bug hunting, edge-case analysis, and implementation verification.
+Commit: 77409a5
+
+### 2026-03-01 — agents/rug-orchestrator.agent.md (A)
+Summary: Pure orchestration agent that decomposes requests, delegates all work to subagents, validates outcomes, and repeats until complete.
+Commit: 77409a5
+
+### 2026-03-01 — agents/swe-subagent.agent.md (A)
+Summary: Senior software engineer subagent for implementation tasks: feature development, debugging, refactoring, and testing.
+Commit: 77409a5
+
+### 2026-03-01 — agents/vuejs-expert.agent.md (A)
+Summary: Expert Vue.js frontend engineer specializing in Vue 3 Composition API, reactivity, state management, testing, and performance with TypeScript
+Commit: 77409a5
+
