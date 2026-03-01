@@ -202,3 +202,6 @@ This file lists all skills with a short English summary.
 | winapp-cli | Windows App Development CLI (winapp) for building, packaging, and deploying Windows applications. Use when asked to init | skills\winapp-cli\SKILL.md |
 | workiq-copilot | Guides the Copilot CLI on how to use the WorkIQ CLI/MCP server to query Microsoft 365 Copilot data (emails, meetings, do | skills\workiq-copilot\SKILL.md |
 | write-coding-standards-from-file | Write a coding standards document for a project using the coding styles from the file(s) and/or folder(s) passed as argu | skills\write-coding-standards-from-file\SKILL.md |
+| agent-governance | | | skills\agent-governance\SKILL.md |
+| agentic-eval | | | skills\agentic-eval\SKILL.md |
+| scoutqa-test | | | skills\scoutqa-test\SKILL.md |
