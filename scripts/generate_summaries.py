@@ -23,8 +23,8 @@ def run(cmd):
 
 
 def git_diff_name_status(base):
-    # include both 'prompts' and 'prompt' in case repo naming differs
-    cmd = ["git", "diff", "--name-status", f"{base}..HEAD", "--", "agents/", "prompts/", "prompt/"]
+    # include 'skills/' as the target for prompt-like resources
+    cmd = ["git", "diff", "--name-status", f"{base}..HEAD", "--", "agents/", "skills/"]
     rc, out, err = run(cmd)
     if rc != 0:
         print(err, file=sys.stderr)
@@ -113,7 +113,12 @@ def main():
 
     changelog_items = []
     for status, path in entries:
-        kind = "agent" if path.startswith("agents/") else "prompt"
+        if path.startswith("agents/"):
+            kind = "agent"
+        elif path.startswith("skills/"):
+            kind = "skill"
+        else:
+            kind = "other"
         short = ""
         summary = ""
         if status == 'A':

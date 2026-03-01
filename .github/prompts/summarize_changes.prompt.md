@@ -1,18 +1,18 @@
 ---
 agent: agent
 name: summarize-changes
-description: 'リポジトリ内の変更（agents/ や prompts/）を受け取り、summaries/ に追加する要約と、changelog.md へ記載する短い説明を生成します。'
+description: 'リポジトリ内の変更（agents/ や skills/）を受け取り、summaries/ に追加する要約と、changelog.md へ記載する短い説明を生成します。'
 ---
 
 目的
-- フォーク先から取り込んだ差分（追加/更新/削除）について、人間が読める短い要約（日本語）と changelog 用の1行説明を生成してください。
+- フォーク先から取り込んだ差分（追加/更新/削除）について、人間が読める短い要約（日本語）と changelog 用の1行説明を生成してください。対象は `agents/` と `skills/` です。
 
 期待する入力（agent 実行時に次のフィールドが与えられます）
 - `path`: 変更されたファイルパス（例: `agents/azure-iac-generator.agent.md`）
 - `status`: 変更種別（`A`=追加, `M`=更新, `D`=削除）
 - `commit`: 関連コミットの短いハッシュ（例: `abc1234`）
 - `old`: 古いファイル内容（`status` が `M` の場合に提供される、`D` の場合は提供されることもある）。存在しない場合は空文字。
-- `new`: 新しいファイル内容（`status` が `A` または `M` の場合に提供）。存在しない場合は空文字。
+ - `new`: 新しいファイル内容（`status` が `A` または `M` の場合に提供）。`skills/` の場合は `SKILL.md` の本文や関連テンプレートが渡されます。存在しない場合は空文字。
 
 出力フォーマット（必ずこの JSON を返してください）
 {

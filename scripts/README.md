@@ -1,6 +1,6 @@
 # generate_summaries.py
 
-Minimal prototype to detect changes under `agents/` and `prompts/` and append
+Minimal prototype to detect changes under `agents/` and `skills/` and append
 human-readable summaries to `summaries/` and `changelog.md`.
 
 Quick run (from repo root):
