@@ -15,6 +15,7 @@ import os
 import re
 import subprocess
 import sys
+import glob
 
 
 def run(cmd):
@@ -96,6 +97,36 @@ def append_changelog(out_path, date, items):
         f.writelines(lines)
 
 
+def generate_skill_index(summaries_dir):
+    """Scan skills/**/SKILL.md and write summaries/skill_en.md"""
+    base = os.path.join(os.getcwd(), "skills")
+    entries = []
+    for path in glob.glob(os.path.join(base, "**", "SKILL.md"), recursive=True):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                text = f.read()
+        except Exception:
+            continue
+        fm = extract_frontmatter(text)
+        name = fm.get('name') or fm.get('title') or os.path.basename(os.path.dirname(path))
+        desc = fm.get('description') or first_paragraph(text)
+        desc_short = (desc.splitlines()[0] if desc else "")[:120]
+        rel = os.path.relpath(path, os.getcwd()).replace('\\', '/')
+        entries.append((name, desc_short, rel))
+
+    entries.sort(key=lambda x: x[0].lower())
+    out_path = os.path.join(summaries_dir, "skill_en.md")
+    os.makedirs(summaries_dir, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("# Skill Summary\n\n")
+        f.write("This file lists all skills with a short English summary.\n\n")
+        f.write("| Skill Name | Summary | Source |\n")
+        f.write("|---|---|---|\n")
+        for name, desc, rel in entries:
+            f.write(f"| {name} | {desc} | {rel} |\n")
+    return out_path
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--base", default="upstream/main", help="Base ref to compare (git)")
@@ -151,6 +182,10 @@ def main():
 
     append_changelog(args.out, date, changelog_items)
     print(f"Wrote {len(changelog_items)} items to {args.out} and summaries dir {args.summaries_dir}")
+
+    # also regenerate full skill index
+    skill_index = generate_skill_index(args.summaries_dir)
+    print(f"Generated skill index: {skill_index}")
 
 
 if __name__ == '__main__':
